@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StampedTemplate</title>
+  <style>
+    body { font-family: monospace; line-height: 1.8em; }
+  </style>
+</head>
+<body>
+  <main>
+    <form id="form">
+      <label>GitHub username <input id="username" required autofocus></label>
+      <button>Add to list</button>
+    </form>
+    <template id="template">
+      <li>
+        <img src="https://github.com/{{ username }}.png" width="16" height="16" alt="" align="absmiddle">
+        <a href="https://github.com/{{ username }}">@{{ username }}</a>
+        added at
+        <time>{{ timestamp }}</time>
+        <small>({{seconds}} seconds ago)</small>
+      </li>
+    </template>
+    <ol id="list"></ol>
+  </main>
+  <script type="module" src="/scripts/main.js"></script>
+</body>
+</html>
